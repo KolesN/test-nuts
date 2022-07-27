@@ -30,7 +30,6 @@ body {
 .title {
   display: flex;
   order: 1;
-  background: yellow;
   width: 100%;
   height: 50px;
 }
@@ -67,7 +66,6 @@ body {
 .navigation {
   display: flex;
   order: 3;
-  background: red;
   transform: translateX(100);
   transition: transform 0.1s ease;
   width: 100%;
