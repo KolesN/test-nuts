@@ -19,20 +19,25 @@ body {
 
 .slider-container {
   display: flex;
-  width: 100%;
-  height: 100%;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .slider-wrapper {
   display: flex;
-  max-width: 1160px;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  max-width: 1160px;
+  width: 100%;
+  height: 100%;
+  
+  ::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+  }
 }
 
 .title {
@@ -48,17 +53,19 @@ body {
 }
 
 .news-wrapper {
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
   max-width: 1160px;
   width: 100%;
   margin-top: 40px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: 0px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+ // transform: translateX(-100px);
   gap: 10px;
+
 }
 
 .news-content {
@@ -69,7 +76,9 @@ body {
   width: 280px;
   max-height: 420px;
   padding: 20px;
+  //transform: translateX(-10%);
   border: 1px solid $inactive;
+  gap: 10px;
 
   img {
     width: 240px;
@@ -99,23 +108,65 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   min-width: 280px;
 }
 .scrollbar {
   height: 1px;
   background: $inactive;
   min-width: 130px;
-  padding: 0 20px;
   max-width: 360px;
+  flex-grow: 1;
 }
 
 .thumb {
   width: 25%;
+  height: 100%;
   background: $active;
 }
 
 .button {
   height: 55px;
   width: 55px;
+  .btn-next,
+  .btn-prev {
+    height: 100%;
+    width: 100%;
+  background: #FFF;
+    border: 1px solid $inactive;
+  }
+  :hover {
+    background: $inactive;
+  }
 }
 
+@media all and (min-width: 640px) {
+
+  .slider-wrapper {
+    max-height: 520px;;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    order: 1;
+    width: 50%;
+  }
+  .news-wrapper {
+    order: 5;
+  }
+  .navigation {
+    order: 2;
+    padding-left: 10px;
+    width: 50%;
+  }
+  .scrollbar {
+    order: 2;
+  }
+  .button {
+    width: 60px;
+    height: 60px;
+  }
+  .next {order: 4;}
+  .prev {order: 3;}
+}
