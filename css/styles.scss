@@ -33,7 +33,7 @@ body {
   max-width: 1160px;
   width: 100%;
   height: 100%;
-  
+
   ::-webkit-scrollbar {
     height: 0px;
     width: 0px;
@@ -62,7 +62,7 @@ body {
   margin-bottom: 20px;
   display: flex;
   overflow-x: scroll;
-  scrollbar-width: none;
+  user-select: none;
  // transform: translateX(-100px);
   gap: 10px;
 
@@ -138,6 +138,10 @@ body {
   :hover {
     background: $inactive;
   }
+}
+
+.active {
+  border-color: #527CCD;
 }
 
 @media all and (min-width: 640px) {
